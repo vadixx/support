@@ -1,0 +1,193 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #a8c0ff, #3faffa);
+    color: #333;
+    padding: 40px;
+}
+
+/* Основной контейнер приложения */
+#app {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+}
+#category-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* Раздел с категориями товаров */
+#category-list {
+    display: flex;
+    justify-content: space-around; /* Располагаем категории по горизонтали */
+    gap: 20px;
+    flex-wrap: wrap; /* Это позволяет иконкам "переноситься" на новую строку, если места не хватает */
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px; /* Устанавливаем фиксированную ширину для категорий */
+    height: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category img {
+    width: 100%; /* Иконки будут занимать 100% ширины элемента */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.category span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стили для списка товаров */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Сетка для товаров */
+    gap: 20px;
+}
+
+#product-list div {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#product-list div:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+#product-list img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+button {
+    background-color: #3faffa;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2d82d3;
+}
+
+/* Корзина */
+#cart {
+    margin-top: 40px;
+    background-color: #fafafa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#cart ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#cart ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#cart button {
+    margin-top: 20px;
+    background-color: #28a745;
+}
+
+#cart button:hover {
+    background-color: #218838;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #category-list {
+        flex-direction: column; /* На планшетах и мобильных устройствах категории становятся вертикальными */
+        align-items: center; /* Центрируем элементы по вертикали */
+    }
+
+    .category {
+        width: 100%; /* Категории занимают 80% ширины экрана */
+        margin-bottom: 20px; /* Добавляем отступы между категориями */
+    }
+
+    button {
+        width: 100%; /* Кнопки занимают всю ширину */
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category {
+        width: 100%; /* На мобильных устройствах категория занимает 100% ширины */
+    }
+
+    #category-list {
+        gap: 10px; /* Уменьшаем расстояние между категориями */
+    }
+
+    .category img {
+        width: 60%; /* Иконки становятся немного меньше */
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
