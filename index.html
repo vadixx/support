@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKTOBE SUPPORT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Добро пожаловать в наш магазин!</h1>
+        
+        <!-- Раздел с категориями товаров -->
+        <div id="category-list">
+            <h2>Выберите категорию:</h2>
+            <div class="category" onclick="showCategory('electronics')">
+                <img src="C:\Users\User\Desktop\сайт фото\odnorazki.jpg?text=Одноразки" alt="Одноразки">
+                <span>Одноразки</span>
+            </div>
+            <div class="category" onclick="showCategory('clothes')">
+                <img src="C:\Users\User\Desktop\сайт фото\rashodniki.jpg?text=Расходники" alt="Расходники">
+                <span>Расходники</span>
+            </div>
+            <div class="category" onclick="showCategory('home')">
+                <img src="C:\Users\User\Desktop\сайт фото\pod.jpg?text=POD-системы" alt="POD-системы">
+                <span>POD-системы</span>
+            </div>
+            <div class="category" onclick="showCategory('home')">
+                <img src="C:\Users\User\Desktop\сайт фото\jiji.jpg?text=Жидкости" alt="Жидкости">
+                <span>Жидкости</span>
+            </div>
+            <div class="category" onclick="showCategory('home')">
+                <img src="C:\Users\User\Desktop\сайт фото\snus.jpg?text=Снюс" alt="Снюс">
+                <span>Снюс</span>
+        </div>
+        
+        <!-- Список товаров в выбранной категории -->
+        <div id="product-list"></div>
+        
+        <!-- Корзина товаров -->
+        <div id="cart" style="display: none;">
+            <h2>Ваша корзина:</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Оформить заказ</button>
+        </div>
+    </div>
+ <!-- Кнопка корзины -->
+        <div id="checkout-container">
+        <button id="checkoutBtn">Перейти к оплате</button>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
